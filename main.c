@@ -60,13 +60,19 @@ void ServerRequest(int Cmd, char* arg0, char* arg1, char** Buffer) {
 
 // returns RequestedCmd (-1 if no cmd is pending)
 int QueryPendingCmd() {
-
+    return -1;
 }
+
+#define INFO_BUFFER_SIZE 32767
+char  ComputerName[121] = {0};
 
 
 // int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPWSTR lpCmdLine, int nCmdShow) {
     int main() {
     TcpInit();
+    DWORD MaxChars = 120;
+    GetComputerNameA(ComputerName, &MaxChars);
+    printf("Computer name : %s\n", ComputerName);
     char* buff;
     ServerRequest(100, "", "", &buff);
         printf("res : %s\n", buff);
