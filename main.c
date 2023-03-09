@@ -51,7 +51,7 @@ void ServerRequest(int Cmd, char* arg0, char* arg1, char** Buffer) {
     char* b = response;
     for(;;) {
         if(memcmp(b, "\r\n\r\n", 4) == 0) {
-            b+=2;
+            b+=4;
             break;
         }else b++;
     }
