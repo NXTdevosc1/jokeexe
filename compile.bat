@@ -1,0 +1,1 @@
+cl /O2 main.c /Fe:joke.exe
