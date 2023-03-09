@@ -63,7 +63,6 @@ int QueryPendingCmd() {
     return -1;
 }
 
-#define INFO_BUFFER_SIZE 32767
 char  ComputerName[121] = {0};
 
 
